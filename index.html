@@ -3,43 +3,39 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-
-  <title>Nyan Cat y Caracolito AR</title>
+  <title>Minecraft Realidad Aumentada</title>
 
   <!-- A-Frame -->
   <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
 
   <!-- MindAR -->
   <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
-
 </head>
 
 <body style="margin: 0; overflow: hidden;">
 
   <a-scene
-    mindar-image="imageTargetSrc: https://raw.githubusercontent.com/shakou-u/TAREAYAAAA/main/targets%20%281%29.mind;"
+    mindar-image="imageTargetSrc: ./targets.mind;"
     color-space="sRGB"
     renderer="colorManagement: true;"
     vr-mode-ui="enabled: false"
     device-orientation-permission-ui="enabled: false">
 
-    <!-- CARGAMOS LOS DOS MODELOS 3D -->
-
+    <!-- CARGAMOS LOS MODELOS NUEVOS -->
     <a-assets timeout="120000">
 
-      <!-- NYAN CAT -->
+      <!-- ABEJITA -->
       <a-asset-item
-        id="nyanCat"
-        src="./pixel_art_nyan_cat.glb">
+        id="abejita"
+        src="./minecraft_bee.glb">
       </a-asset-item>
 
-      <!-- CARACOLITO -->
+      <!-- STEVE -->
       <a-asset-item
-        id="caracol"
-        src="./snail.glb">
+        id="steve"
+        src="./steve_trailer_bare_bones.glb">
       </a-asset-item>
 
     </a-assets>
@@ -50,27 +46,45 @@
       look-controls="enabled: false">
     </a-camera>
 
-    <!-- PRIMERA IMAGEN: NYAN CAT -->
+    <!-- PRIMERA IMAGEN: ABEJITA -->
     <a-entity mindar-image-target="targetIndex: 0">
 
       <a-gltf-model
-        src="#nyanCat"
+        src="#abejita"
         position="0 0 0.1"
         rotation="0 0 0"
-        scale="0.5 0.5 0.5">
+        scale="1 1 1">
       </a-gltf-model>
+
+      <!-- CUBITO DE PRUEBA -->
+      <a-box
+        position="0 0 0.2"
+        width="0.2"
+        height="0.2"
+        depth="0.2"
+        color="red">
+      </a-box>
 
     </a-entity>
 
-    <!-- SEGUNDA IMAGEN: CARACOLITO -->
+    <!-- SEGUNDA IMAGEN: STEVE -->
     <a-entity mindar-image-target="targetIndex: 1">
 
       <a-gltf-model
-        src="#caracol"
+        src="#steve"
         position="0 0 0.1"
         rotation="0 0 0"
-        scale="0.5 0.5 0.5">
+        scale="1 1 1">
       </a-gltf-model>
+
+      <!-- CUBITO DE PRUEBA -->
+      <a-box
+        position="0 0 0.2"
+        width="0.2"
+        height="0.2"
+        depth="0.2"
+        color="blue">
+      </a-box>
 
     </a-entity>
 
@@ -78,6 +92,5 @@
 
 </body>
 </html>
-
 </body>
 </html>
