@@ -20,32 +20,57 @@
 <body style="margin: 0; overflow: hidden;">
 
   <a-scene
-    mindar-image="imageTargetSrc: https://raw.githubusercontent.com/shakou-u/TAREAYAAAA/main/ImagenesParaGITHUB/targets.mind;"
+    mindar-image="imageTargetSrc: ./targets%20(1).mind;"
     color-space="sRGB"
     renderer="colorManagement: true;"
     vr-mode-ui="enabled: false"
     device-orientation-permission-ui="enabled: false">
 
-    <!-- Cargamos el modelo 3D -->
-    <a-assets>
+    <!-- CARGAMOS LOS DOS MODELOS 3D -->
+
+    <a-assets timeout="60000">
+
+      <!-- Modelo Nyan Cat -->
       <a-asset-item
-        id="modelo3D"
-        src="https://raw.githubusercontent.com/shakou-u/TAREAYAAAA/main/cute_fantasy_animal.glb">
+        id="nyanCat"
+        src="./pixel_art_nyan_cat.glb">
       </a-asset-item>
+
+      <!-- Modelo Caracolito -->
+      <a-asset-item
+        id="caracol"
+        src="./snail.glb">
+      </a-asset-item>
+
     </a-assets>
 
-    <!-- Cámara -->
+    <!-- CÁMARA -->
     <a-camera
       position="0 0 0"
       look-controls="enabled: false">
     </a-camera>
 
-    <!-- Imagen que escanearemos -->
+
+    <!-- PRIMERA IMAGEN: NYAN CAT -->
+
     <a-entity mindar-image-target="targetIndex: 0">
 
-      <!-- Nuestro modelo 3D -->
       <a-gltf-model
-        src="#modelo3D"
+        src="#nyanCat"
+        position="0 0 0.1"
+        rotation="0 0 0"
+        scale="0.5 0.5 0.5">
+      </a-gltf-model>
+
+    </a-entity>
+
+
+    <!-- SEGUNDA IMAGEN: CARACOLITO -->
+
+    <a-entity mindar-image-target="targetIndex: 1">
+
+      <a-gltf-model
+        src="#caracol"
         position="0 0 0.1"
         rotation="0 0 0"
         scale="0.5 0.5 0.5">
