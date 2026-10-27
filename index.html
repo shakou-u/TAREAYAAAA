@@ -7,16 +7,17 @@
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
 
-  <title>Mi Realidad Aumentada</title>
+  <title>Mi Realidad Aumentada 3D</title>
 
-  <!-- Librería A-Frame -->
+  <!-- A-Frame -->
   <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
 
-  <!-- Librería MindAR -->
+  <!-- MindAR -->
   <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+
 </head>
 
-<body>
+<body style="margin: 0; overflow: hidden;">
 
   <a-scene
     mindar-image="imageTargetSrc: https://raw.githubusercontent.com/shakou-u/TAREAYAAAA/main/ImagenesParaGITHUB/targets.mind;"
@@ -25,13 +26,13 @@
     vr-mode-ui="enabled: false"
     device-orientation-permission-ui="enabled: false">
 
-    <!-- Imagen que aparecerá -->
-   <a-assets>
-  <img
-    id="imagenAR"
-    src="https://raw.githubusercontent.com/shakou-u/TAREAYAAAA/main/imagen3.PNG"
-    crossorigin="anonymous">
-</a-assets>
+    <!-- Cargamos el modelo 3D -->
+    <a-assets>
+      <a-asset-item
+        id="modelo3D"
+        src="https://raw.githubusercontent.com/shakou-u/TAREAYAAAA/main/cute_fantasy_animal.glb">
+      </a-asset-item>
+    </a-assets>
 
     <!-- Cámara -->
     <a-camera
@@ -39,24 +40,20 @@
       look-controls="enabled: false">
     </a-camera>
 
-    <!-- Imagen que reconocerá la cámara -->
+    <!-- Imagen que escanearemos -->
     <a-entity mindar-image-target="targetIndex: 0">
 
-      <!-- Segunda imagen en realidad aumentada -->
- <a-image
-  src="#imagenAR"
-  position="0 0 0.01"
-  width="1"
-  height="2"
-  rotation="0 0 0">
-</a-image>
+      <!-- Nuestro modelo 3D -->
+      <a-gltf-model
+        src="#modelo3D"
+        position="0 0 0.1"
+        rotation="0 0 0"
+        scale="0.5 0.5 0.5">
+      </a-gltf-model>
 
     </a-entity>
 
   </a-scene>
-
-</body>
-</html>
 
 </body>
 </html>
