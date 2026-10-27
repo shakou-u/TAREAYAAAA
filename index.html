@@ -7,10 +7,7 @@
 
   <title>Minecraft Realidad Aumentada</title>
 
-  <!-- A-Frame -->
   <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-
-  <!-- MindAR -->
   <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
 </head>
 
@@ -23,66 +20,33 @@
     vr-mode-ui="enabled: false"
     device-orientation-permission-ui="enabled: false">
 
-    <!-- CARGAMOS LOS MODELOS NUEVOS -->
-    <a-assets timeout="120000">
-
-      <!-- ABEJITA -->
-      <a-asset-item
-        id="abejita"
-        src="./minecraft_bee.glb">
-      </a-asset-item>
-
-      <!-- STEVE -->
-      <a-asset-item
-        id="steve"
-        src="./steve_trailer_bare_bones.glb">
-      </a-asset-item>
-
-    </a-assets>
-
     <!-- CÁMARA -->
     <a-camera
       position="0 0 0"
       look-controls="enabled: false">
     </a-camera>
 
-    <!-- PRIMERA IMAGEN: ABEJITA -->
+    <!-- PRIMERA IMAGEN -->
     <a-entity mindar-image-target="targetIndex: 0">
 
-      <a-gltf-model
-        src="#abejita"
-        position="0 0 0.1"
-        rotation="0 0 0"
-        scale="1 1 1">
-      </a-gltf-model>
-
-      <!-- CUBITO DE PRUEBA -->
       <a-box
         position="0 0 0.2"
-        width="0.2"
-        height="0.2"
-        depth="0.2"
+        width="0.3"
+        height="0.3"
+        depth="0.3"
         color="red">
       </a-box>
 
     </a-entity>
 
-    <!-- SEGUNDA IMAGEN: STEVE -->
+    <!-- SEGUNDA IMAGEN -->
     <a-entity mindar-image-target="targetIndex: 1">
 
-      <a-gltf-model
-        src="#steve"
-        position="0 0 0.1"
-        rotation="0 0 0"
-        scale="1 1 1">
-      </a-gltf-model>
-
-      <!-- CUBITO DE PRUEBA -->
       <a-box
         position="0 0 0.2"
-        width="0.2"
-        height="0.2"
-        depth="0.2"
+        width="0.3"
+        height="0.3"
+        depth="0.3"
         color="blue">
       </a-box>
 
@@ -92,4 +56,3 @@
 
 </body>
 </html>
-
