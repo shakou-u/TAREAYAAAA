@@ -14,16 +14,24 @@
 
   <!-- Librería MindAR -->
   <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
-
 </head>
 
 <body>
 
   <a-scene
     mindar-image="imageTargetSrc: https://raw.githubusercontent.com/shakou-u/TAREAYAAAA/main/ImagenesParaGITHUB/targets.mind;"
+    color-space="sRGB"
     renderer="colorManagement: true;"
     vr-mode-ui="enabled: false"
     device-orientation-permission-ui="enabled: false">
+
+    <!-- Imagen que aparecerá -->
+    <a-assets>
+      <img
+        id="imagenAR"
+        src="https://raw.githubusercontent.com/shakou-u/TAREAYAAAA/main/ImagenesParaGITHUB/imagen2.PNG"
+        crossorigin="anonymous">
+    </a-assets>
 
     <!-- Cámara -->
     <a-camera
@@ -31,22 +39,24 @@
       look-controls="enabled: false">
     </a-camera>
 
-    <!-- Imagen que vamos a reconocer -->
+    <!-- Imagen que reconocerá la cámara -->
     <a-entity mindar-image-target="targetIndex: 0">
 
-      <!-- Imagen que aparecerá -->
+      <!-- Segunda imagen en realidad aumentada -->
       <a-plane
-        src="./imagen2.PNG"
+        src="#imagenAR"
         position="0 0 0"
-        height="1"
         width="1"
-        rotation="0 0 0"
+        height="1"
         material="transparent: true; side: double">
       </a-plane>
 
     </a-entity>
 
   </a-scene>
+
+</body>
+</html>
 
 </body>
 </html>
